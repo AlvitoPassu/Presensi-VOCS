@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Final_Project
 {
-    public partial class FrmLogin : Form
+    public partial class FrmTakeAttendance : Form
     {
-        public FrmLogin()
+        public FrmTakeAttendance()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
