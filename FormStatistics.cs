@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Final_Project
 {
-    public partial class FrmTakeAttendance : Form
+    public partial class FormStatistics : Form
     {
-        public FrmTakeAttendance()
+        public FormStatistics()
         {
             InitializeComponent();
         }
@@ -27,26 +27,6 @@ namespace Final_Project
 
             // Tutup form attendance
             this.Close();
-        }
-
-        private void btnStartAttendance_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbTime_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtpDate_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDescription_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

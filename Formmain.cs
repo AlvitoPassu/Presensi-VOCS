@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChoirMemberApp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +18,45 @@ namespace Final_Project
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnTakeAttendance_Click(object sender, EventArgs e)
+        {
+            // Membuat instance dari form FrmTakeAttendance
+            FrmTakeAttendance takeAttendanceForm = new FrmTakeAttendance();
+            takeAttendanceForm.Owner = this;  // simpan referensi form utama
+
+            // Menampilkan FrmTakeAttendance
+            takeAttendanceForm.Show();
+
+            // Sembunyikan form utama sementara
+            this.Hide();
+        }
+
+        private void btnAddMember_Click(object sender, EventArgs e)
+        {
+            // Membuat instance dari form FormAddMember
+            FormAddMember formAddMember = new FormAddMember();
+
+            // Menampilkan FormAddMember
+            formAddMember.Show();
+
+            // Opsional: sembunyikan form utama sementara
+            this.Hide();
+
+            // Ketika FormAddMember ditutup, tampilkan kembali Formmain
+            formAddMember.FormClosed += (s, args) => this.Show();
+        }
+
+        private void btnStatistics_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMemberList_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExitApp_Click(object sender, EventArgs e)
         {
 
         }
