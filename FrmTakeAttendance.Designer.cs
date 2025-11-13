@@ -47,6 +47,7 @@
             // 
             // btnBack
             // 
+            this.btnBack.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
             this.btnBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBack.Location = new System.Drawing.Point(12, 12);
@@ -62,28 +63,28 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Yu Gothic UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(63, 72);
+            this.label1.Font = new System.Drawing.Font("Poppins", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(63, 66);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label1.Size = new System.Drawing.Size(354, 38);
+            this.label1.Size = new System.Drawing.Size(412, 50);
             this.label1.TabIndex = 1;
             this.label1.Text = "Create Attendance Session";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Yu Gothic UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(66, 110);
+            this.label2.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(66, 104);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label2.Size = new System.Drawing.Size(393, 23);
+            this.label2.Size = new System.Drawing.Size(443, 30);
             this.label2.TabIndex = 2;
             this.label2.Text = "Set up a new meeting and start taking attendance";
             // 
             // dtpDate
             // 
-            this.dtpDate.Location = new System.Drawing.Point(70, 214);
+            this.dtpDate.Location = new System.Drawing.Point(70, 199);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(243, 22);
             this.dtpDate.TabIndex = 3;
@@ -92,17 +93,17 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(97, 178);
+            this.label3.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(97, 163);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 28);
+            this.label3.Size = new System.Drawing.Size(54, 30);
             this.label3.TabIndex = 4;
             this.label3.Text = "Date";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(70, 177);
+            this.pictureBox1.Location = new System.Drawing.Point(70, 162);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(24, 29);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -161,7 +162,7 @@
             "22.30",
             "23.00",
             "23.30"});
-            this.cmbTime.Location = new System.Drawing.Point(420, 213);
+            this.cmbTime.Location = new System.Drawing.Point(420, 198);
             this.cmbTime.Name = "cmbTime";
             this.cmbTime.Size = new System.Drawing.Size(271, 24);
             this.cmbTime.TabIndex = 6;
@@ -170,7 +171,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(420, 179);
+            this.pictureBox2.Location = new System.Drawing.Point(420, 164);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(24, 28);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -180,35 +181,36 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(450, 179);
+            this.label4.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(450, 164);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 28);
+            this.label4.Size = new System.Drawing.Size(56, 30);
             this.label4.TabIndex = 8;
             this.label4.Text = "Time";
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(70, 310);
+            this.txtDescription.Location = new System.Drawing.Point(70, 280);
+            this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(621, 22);
+            this.txtDescription.Size = new System.Drawing.Size(621, 73);
             this.txtDescription.TabIndex = 9;
             this.txtDescription.TextChanged += new System.EventHandler(this.txtDescription_TextChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Yu Gothic UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(66, 284);
+            this.label5.Font = new System.Drawing.Font("Poppins SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(67, 247);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(165, 23);
+            this.label5.Size = new System.Drawing.Size(186, 30);
             this.label5.TabIndex = 10;
             this.label5.Text = "Meeting Description";
             // 
             // btnStartAttendance
             // 
-            this.btnStartAttendance.Font = new System.Drawing.Font("Yu Gothic UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartAttendance.Location = new System.Drawing.Point(261, 368);
+            this.btnStartAttendance.Font = new System.Drawing.Font("Poppins SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStartAttendance.Location = new System.Drawing.Point(260, 377);
             this.btnStartAttendance.Name = "btnStartAttendance";
             this.btnStartAttendance.Size = new System.Drawing.Size(246, 50);
             this.btnStartAttendance.TabIndex = 11;
@@ -235,6 +237,7 @@
             this.Controls.Add(this.btnBack);
             this.Name = "FrmTakeAttendance";
             this.Text = "FrmTakeAttendance";
+            this.Load += new System.EventHandler(this.FrmTakeAttendance_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
