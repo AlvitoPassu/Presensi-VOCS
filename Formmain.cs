@@ -48,7 +48,20 @@ namespace Final_Project
 
         private void btnStatistics_Click(object sender, EventArgs e)
         {
+            // Buat instance dari form statistik
+            FormStatistics statisticsForm = new FormStatistics();
 
+            // Simpan referensi ke form utama
+            statisticsForm.Owner = this;
+
+            // Tampilkan FormStatistics
+            statisticsForm.Show();
+
+            // Sembunyikan form utama sementara
+            this.Hide();
+
+            // Saat FormStatistics ditutup, tampilkan kembali form utama
+            statisticsForm.FormClosed += (s, args) => this.Show();
         }
 
         private void btnMemberList_Click(object sender, EventArgs e)
