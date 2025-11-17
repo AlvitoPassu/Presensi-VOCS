@@ -33,7 +33,9 @@ namespace Final_Project
 
                     // Ambil nilai dari form
                     cmd.Parameters.AddWithValue("@date", dtpDate.Value.Date);
-                    cmd.Parameters.AddWithValue("@time", cmbTime.Text);
+                    // Convert "08.00" → "08:00:00"
+                    string fixedTime = cmbTime.Text.Replace(".", ":") + ":00";
+                    cmd.Parameters.AddWithValue("@time", fixedTime);
                     cmd.Parameters.AddWithValue("@desc", txtDescription.Text);
 
                     // Eksekusi query
