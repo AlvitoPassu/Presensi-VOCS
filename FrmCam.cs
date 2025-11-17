@@ -79,5 +79,30 @@ namespace Final_Project
                 }
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Hentikan kamera jika masih aktif
+                if (FinalFrame != null && FinalFrame.IsRunning)
+                {
+                    FinalFrame.SignalToStop();
+                    FinalFrame.WaitForStop();
+                }
+
+                // Buka FormStatistics untuk melihat hasil presensi
+                FormStatistics statisticsForm = new FormStatistics();
+                statisticsForm.Show();
+
+                // Tutup form kamera
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Terjadi kesalahan saat menyelesaikan absen: " + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

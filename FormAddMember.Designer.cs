@@ -131,6 +131,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormAddMember";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAddMember";
             this.Load += new System.EventHandler(this.FormAddMember_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

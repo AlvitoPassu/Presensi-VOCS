@@ -78,7 +78,7 @@
             this.btnTakeAttendance.Name = "btnTakeAttendance";
             this.btnTakeAttendance.Size = new System.Drawing.Size(241, 70);
             this.btnTakeAttendance.TabIndex = 3;
-            this.btnTakeAttendance.Text = "Take Attendance";
+            this.btnTakeAttendance.Text = "Attendance";
             this.btnTakeAttendance.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTakeAttendance.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTakeAttendance.UseVisualStyleBackColor = true;
@@ -154,6 +154,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Formmain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formmain";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
