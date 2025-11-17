@@ -126,6 +126,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Name = "FrmCam";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCam";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmCam_FormClosing);
             this.Load += new System.EventHandler(this.FrmCam_Load);

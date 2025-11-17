@@ -145,6 +145,7 @@
             this.Controls.Add(this.btnBack);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormStatistics";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormStatistics";
             this.Load += new System.EventHandler(this.FormStatistics_Load);
             this.groupBox1.ResumeLayout(false);

@@ -18,7 +18,6 @@ namespace Final_Project
             colPresent.DataPropertyName = "present";
             colLate.DataPropertyName = "late";
             colAbsent.DataPropertyName = "absent";
-            colIzin.DataPropertyName = "izin";
 
             // Optional formatting
             colDate.DefaultCellStyle.Format = "yyyy-MM-dd";
@@ -70,7 +69,11 @@ namespace Final_Project
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Close(); // atau aksi lain yang diinginkan
+            if (this.Owner != null)
+            {
+                this.Owner.Show();
+            }
+            this.Close();
         }
 
         private void EnsureCountColumns(DataTable dt)
