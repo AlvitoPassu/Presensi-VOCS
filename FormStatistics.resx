@@ -122,10 +122,10 @@
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
         MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAACwwAAAsMAT9AIsgAAAAHdElNRQfpCh0XNSsCuPkKAAAA
-        zElEQVRIS+2Wvw4BQRCHP2pCq0RJpfce2uvE00m0dBoR3oGeggc4meRGYrLXuN3MFfslv2on+TL7HzIZ
-        Z7rAElgBIzuYig6wAZ5ACWyBgS2KjUpflVTyAGa2MCYhqWSXsuM66QGY2OJYtEq6B8a2OBZyZELSE7AA
-        +sCwQXpWKEina+BtpJI7cAYuDXIFjkBRNfhF1u4WkMaOOH72ydRLrFNt11eSdKoFl82luBwnpU6e9AJR
-        WilP+kgoIbk8i3NbmAKXj4Di8vXJZP7iA+RKpJTukp8/AAAAAElFTkSuQmCC
+        wUlEQVRIS+3WvQ4BURRF4aEmtEqUVHrvodWJp5No6TQivAM9BQ/A2sURxtUYZ+4UdyVfo9mZPzNZKhW7
+        OsaYoKMfyqiGOS64Y4EWXLPRKzQqZwzgVmhUlnA74m+ja/TgUqVGV+jCJT0yodEtRmiiXUADH+lIZ7jh
+        dVRO2GFfwAEbTKEDfKZrd0R+9N+08Xaf9BFl2E51/vqK66lWUW4uK8rjZEX5A7EqOe76krBC43otDuGe
+        jZf6IWBF+fRJpX4oyx7kSqSUzQvrygAAAABJRU5ErkJggg==
 </value>
   </data>
   <metadata name="colDate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -141,12 +141,6 @@
     <value>True</value>
   </metadata>
   <metadata name="colAbsent.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colIzin.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colEdit.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
 </root>
