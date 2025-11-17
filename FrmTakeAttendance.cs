@@ -61,6 +61,11 @@ namespace Final_Project
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            // Kembali ke Formmain
+            if (this.Owner != null)
+            {
+                this.Owner.Show();
+            }
             this.Close();
         }
 

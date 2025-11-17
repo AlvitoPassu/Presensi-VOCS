@@ -71,7 +71,7 @@ namespace Final_Project
 
         private void btnExitApp_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
     }
 }

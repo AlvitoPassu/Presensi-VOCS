@@ -236,6 +236,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBack);
             this.Name = "FrmTakeAttendance";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmTakeAttendance";
             this.Load += new System.EventHandler(this.FrmTakeAttendance_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
