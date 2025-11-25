@@ -268,7 +268,17 @@ namespace Final_Project
                     FinalFrame.WaitForStop();
                 }
 
+                // Temukan Formmain yang sedang terbuka (perhatikan 'm' kecil)
+                var frmMain = Application.OpenForms.OfType<Formmain>().FirstOrDefault();
+
                 FormStatistics f = new FormStatistics();
+
+                // Tetapkan Formmain sebagai Owner dari FormStatistics
+                if (frmMain != null)
+                {
+                    f.Owner = frmMain;
+                }
+
                 f.Show();
                 this.Close();
             }

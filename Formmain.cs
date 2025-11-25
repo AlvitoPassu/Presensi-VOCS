@@ -66,7 +66,10 @@ namespace Final_Project
 
         private void btnMemberList_Click(object sender, EventArgs e)
         {
-
+            ListMember listMemberForm = new ListMember();
+            listMemberForm.Show();
+            this.Hide();
+            listMemberForm.FormClosed += (s, args) => this.Show();
         }
 
         private void btnExitApp_Click(object sender, EventArgs e)
