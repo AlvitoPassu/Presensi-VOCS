@@ -10,10 +10,22 @@ namespace Final_Project
         public FormStatistics()
         {
             InitializeComponent();
+
+            // Bind DataGridView columns to DataTable fields
+            dgvStatistics.AutoGenerateColumns = false;
+            colDate.DataPropertyName = "meeting_date";
+            colMeeting.DataPropertyName = "meeting_description";
+            colPresent.DataPropertyName = "present";
+            colLate.DataPropertyName = "late";
+            colAbsent.DataPropertyName = "absent";
+
+            // Optional formatting
+            colDate.DefaultCellStyle.Format = "yyyy-MM-dd";
         }
 
         private void FormStatistics_Load(object sender, EventArgs e)
         {
+            dgvStatistics.AutoGenerateColumns = false;
             LoadStatistics();
         }
 
@@ -21,46 +33,72 @@ namespace Final_Project
         {
             try
             {
-                string connectionString = "server=localhost;database=db_choir;uid=root;pwd=;";
-                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                string connStr = "server=localhost;database=db_choir;uid=root;pwd=;";
+                using (var conn = new MySqlConnection(connStr))
                 {
                     conn.Open();
 
-                    string query = "SELECT id, meeting_date, meeting_time, meeting_description, present, late, absent, izin FROM tbl_attendance ORDER BY meeting_date DESC";
-                    MySqlCommand cmd = new MySqlCommand(query, conn);
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
+                    // Modifikasi query untuk mengambil kolom present, late, absent, dan izin
+                    string query = @"
+                        SELECT id, meeting_date, meeting_description, present, late, absent, izin
+                        FROM tbl_attendance
+                        ORDER BY meeting_date DESC";
+
+                    var dt = new DataTable();
+                    using (var da = new MySqlDataAdapter(query, conn))
+                    {
+                        da.Fill(dt);
+                    }
+
+                    // Metode EnsureCountColumns tidak lagi diperlukan karena query sudah mengambil data
+                    // EnsureCountColumns(dt);
 
                     dgvStatistics.DataSource = dt;
-
-                    // Atur lebar kolom agar lebih rapi
-                    dgvStatistics.Columns["id"].HeaderText = "ID";
-                    dgvStatistics.Columns["meeting_date"].HeaderText = "Tanggal";
-                    dgvStatistics.Columns["meeting_time"].HeaderText = "Waktu";
-                    dgvStatistics.Columns["meeting_description"].HeaderText = "Deskripsi";
-                    dgvStatistics.Columns["present"].HeaderText = "Hadir";
-                    dgvStatistics.Columns["late"].HeaderText = "Terlambat";
-                    dgvStatistics.Columns["absent"].HeaderText = "Absen";
-                    dgvStatistics.Columns["izin"].HeaderText = "Izin";
-
                     dgvStatistics.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 }
             }
+            catch (MySqlException mex)
+            {
+                MessageBox.Show("Kesalahan database: " + mex.Message, "MySQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show("Gagal memuat data statistik: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Gagal memuat data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            // Kembali ke Formmain
             if (this.Owner != null)
             {
                 this.Owner.Show();
             }
             this.Close();
+        }
+
+        private void EnsureCountColumns(DataTable dt)
+        {
+            // Add columns if they do not exist
+            string[] columns = { "present", "late", "absent", "izin" };
+            foreach (var col in columns)
+            {
+                if (!dt.Columns.Contains(col))
+                {
+                    dt.Columns.Add(col, typeof(int));
+                }
+            }
+
+            // Set default value to 0 for all rows
+            foreach (DataRow row in dt.Rows)
+            {
+                foreach (var col in columns)
+                {
+                    if (row.IsNull(col))
+                    {
+                        row[col] = 0;
+                    }
+                }
+            }
         }
     }
 }

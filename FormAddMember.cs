@@ -9,7 +9,7 @@ namespace ChoirMemberApp
     {
         private MySqlConnection koneksi;
         private MySqlCommand perintah;
-        private string alamat, query;
+        private string alamat;
 
         public FormAddMember()
         {
@@ -30,28 +30,27 @@ namespace ChoirMemberApp
         {
             try
             {
-                // Cek apakah semua data sudah diisi
-                if (txtFullName.Text != "" && txtRegistrationNumber.Text != "")
+                if (!string.IsNullOrEmpty(txtFullName.Text) &&
+                    !string.IsNullOrEmpty(txtRegistrationNumber.Text))
                 {
-                    // Query insert data
-                    query = string.Format(
-                        "INSERT INTO tbl_anggota (full_name, registration_number) VALUES ('{0}', '{1}')",
-                        txtFullName.Text, txtRegistrationNumber.Text
-                    );
+                    string query = "INSERT INTO tbl_anggota (full_name, registration_number) VALUES (@name, @reg)";
 
-                    // Eksekusi query
                     koneksi.Open();
+
                     perintah = new MySqlCommand(query, koneksi);
+                    perintah.Parameters.AddWithValue("@name", txtFullName.Text);
+                    perintah.Parameters.AddWithValue("@reg", txtRegistrationNumber.Text);
+
                     int res = perintah.ExecuteNonQuery();
+
                     koneksi.Close();
 
-                    // Cek hasil eksekusi
                     if (res == 1)
                     {
                         MessageBox.Show("Data anggota berhasil disimpan!",
                             "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        // Bersihkan input setelah berhasil
+                        // Bersihkan input
                         FormAddMember_Load(null, null);
                     }
                     else
@@ -70,7 +69,15 @@ namespace ChoirMemberApp
             {
                 MessageBox.Show("Terjadi kesalahan: " + ex.Message,
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                if (koneksi.State == ConnectionState.Open)
+                    koneksi.Close();
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
